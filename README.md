@@ -1,183 +1,396 @@
 # ⏳ TimeWorth — Price → Life-Hours → Future Freedom
 
 > **"Money feels abstract, but time doesn't."**
-> TimeWorth converts any price into the real hours of your life it cost to earn, then shows what that same money could become if invested instead — converted back into hours and days of future freedom. It reframes spending without lecturing.
+
+TimeWorth converts any price into the real hours of your life it costs to earn, then shows what that same money could become if invested instead — converted back into hours and days of potential future freedom.
+
+It reframes spending without lecturing.
+
+**Hackathon Theme:** MoneyMatters — Make Money Make Sense
+
+## 👥 Team Members
+
+- **Akhil**
+- **Gokul**
 
 ---
+
+## 📌 Project Description
+
+Money is easy to spend when we see only its price. But every purchase also represents time spent working to earn that money.
+
+TimeWorth is an AI-powered financial awareness platform that helps users understand the true cost of purchases by translating money into working hours and visualizing potential future financial outcomes.
+
+Instead of simply asking, "Can I afford this?", TimeWorth encourages users to ask:
+
+- How many hours of my life does this purchase cost?
+- What could this money become if I invested it instead?
+- How do my everyday spending habits affect my long-term financial goals?
+
+By combining deterministic financial calculations, interactive charts, natural-language expense input, and AI-powered guidance, TimeWorth makes money management more visual, personal, and accessible.
 
 ## ✨ Features
 
 ### 1. ⏱️ Price → Life-Hours Conversion
-- **Zero-Abstraction Time Math:** Enter any price (e.g. ₹4,999 sneakers, ₹1,20,000 phone) and instantly see the hours and minutes of labor required.
-- **Human-Scale Breakdown:** Translates raw hours into tangible units — work shifts, full work days, work weeks, and months.
-- **Animated Count-Up:** Smooth ease-out cubic animation as numbers update.
-- **Contextual Presets:** Quick-tap chips for common Indian spends (₹450 Zomato, ₹4,999 sneakers, ₹1,20,000 iPhone).
+
+- **Zero-Abstraction Time Math:** Enter any price, such as ₹4,999 sneakers or a ₹1,20,000 phone, and instantly see the estimated working hours required.
+- **Human-Scale Breakdown:** Converts raw hours into work shifts, working days, weeks, and months.
+- **Animated Count-Up:** Uses smooth number transitions to make changes feel intuitive.
+- **Contextual Presets:** Quick-select common purchases such as sneakers, phones, and food delivery.
 
 ### 2. 📈 Freedom Growth Slider & Opportunity Cost
-- **Future Freedom Projection:** Compares spending now vs. investing in Indian equity mutual funds (defaulting to 12% historical annualized returns).
-- **Interactive Dual Sliders:**
-  - Time horizon: 1 to 30 years (default: 10 years).
-  - Annual return rate: 5% to 20% (default: 12%).
-- **Freedom Hours:** Shows future value not just in ₹ Lakhs, but in **hours and days of retirement / financial freedom**.
-- **Interactive AreaChart (Recharts):** Beautiful gradient chart comparing flat spent money vs. exponential compounding curve with custom tooltips.
+
+- **Future Freedom Projection:** Explore how money could grow under configurable investment-return assumptions.
+- **Interactive Sliders:** Adjust the investment horizon from 1 to 30 years and the assumed annual return rate.
+- **Freedom Hours:** Understand projected future value in rupees as well as equivalent working hours.
+- **Interactive Area Chart:** Visualize the difference between spending money today and its hypothetical compounded future value.
+
+**Important:** Investment projections are illustrations, not guarantees of future returns.
 
 ### 3. 🤖 Gemini AI Verdict & Alternatives
-- **Honest & Witty Verdicts:** Streaming SSE response via `/api/ai` powered by Google Gemini (`gemini-2.5-flash`).
-- **Constructive, Not Preachy:** Witty, empathetic perspective on whether a purchase is worth your life-hours.
-- **Cheaper Alternative Recommendation:** Suggests smart, practical alternatives that save 50–80% of your life-hours.
-- **Interactive Follow-Up Chat:** Ask questions directly to the AI about the tradeoff.
-- **Resilient Fallback:** Works gracefully with smart heuristic verdicts if no API key is provided or if network fails.
 
-### 4. 🧠 Natural Language Smart Input
-- **Colloquial Parser:** Understands inputs like:
-  - *"swiggy 400 twice a week"*
-  - *"gym 2000 per month"*
-  - *"netflix 649 monthly"*
-  - *"coffee 180 everyday"*
-- **Recurring Opportunity Cost:** Automatically computes annualized spend and 5/10/20-year compounded wealth foregone.
-- **Inline Editable Chips:** Tweak amount, frequency, or period multiplier with live recalculation.
+- **Personalized Verdicts:** Get friendly, witty, and non-judgmental perspectives on purchase decisions.
+- **Cheaper Alternatives:** Receive suggestions for practical lower-cost alternatives when appropriate.
+- **Interactive Follow-Up Chat:** Ask additional questions about the trade-offs of a purchase.
+- **Streaming Responses:** The application can display AI-generated responses progressively when streaming is supported by the configured endpoint.
+- **Offline Fallback:** Basic financial guidance remains available through heuristic logic when AI is unavailable.
+
+### 4. 🧠 Natural-Language Smart Input
+
+Describe recurring expenses in everyday language, for example:
+
+- `Swiggy 400 twice a week`
+- `Gym 2000 per month`
+- `Netflix 649 monthly`
+- `Coffee 180 every day`
+
+The smart input feature helps interpret expense amounts and frequencies, allowing recurring costs and potential long-term opportunity costs to be explored.
+
+Editable values allow users to correct parsed details before relying on the results.
 
 ### 5. 🛒 Cart & Multi-Item Freedom Drawer
-- **Combined Life-Hours:** Add multiple items (or recurring subscriptions) to your cart.
-- **Total Sacrifice vs. Freedom:** Shows the cumulative hours of your life required for the entire basket.
-- **Undo Support:** Accidental removals can be restored with a single tap.
 
-### 6. 📱 1:1 Share Card Generator
-- **Social Media Ready:** Generates high-resolution 1:1 aspect ratio PNG cards via `html-to-image` for Instagram Stories, WhatsApp, or Twitter/X.
-- **Privacy-First Design:** **Never** displays your actual income, salary, or hourly rate on the card. Only shows item, price, life-hours, and future freedom.
-- **Web Share API with Fallback:** Native mobile share sheet with automatic download fallback for desktop.
+- Add multiple purchases to a combined cart.
+- See the total monetary cost and estimated working hours for all items.
+- Compare combined spending with hypothetical future investment value.
+- Remove items and restore accidental removals where undo functionality is implemented.
 
-### 7. 🇮🇳 Tailored for India & Bilingual (English / தமிழ்)
-- **Indian Numbering System:** Formats large numbers using standard Indian notation (₹ Thousand, ₹ Lakh, ₹ Crore).
-- **Tamil Localization (தமிழ்):** Seamless instant language toggle between English and Tamil with culturally natural translations.
-- **Sensible Defaults:** Baseline income configured to ₹50,000/month (22 work days, 8 hrs/day = ₹284/hr) with easy one-tap income setup.
+### 6. 📱 Share Card Generator
+
+- Generate visual summaries of purchase costs for social sharing.
+- Support image downloads and mobile sharing where supported.
+- Keep salary and hourly-rate information out of share cards to protect user privacy.
+
+### 7. 🇮🇳 Tailored for India & Bilingual
+
+- **Indian Currency Formatting:** Uses the Indian rupee symbol and Indian number grouping.
+- **Tamil Localization:** Supports switching between English and Tamil.
+- **Income Setup:** Lets users configure income and working-hour assumptions for personalized calculations.
+
+### 8. 🎨 Premium Responsive UI
+
+- Dark, modern fintech-inspired interface.
+- Deep navy surfaces with restrained violet accents.
+- Responsive layouts for desktop and mobile.
+- Interactive inputs and visualizations.
+- Refined controls designed to make financial exploration intuitive.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React 18, Vite, TypeScript
-- **Styling:** Tailwind CSS v4, Vanilla CSS Design System, Glassmorphism
-- **Animations:** Framer Motion (page transitions, count-ups, drawer slides)
-- **Charts:** Recharts (responsive gradient AreaChart)
-- **Icons:** Lucide React
-- **Image Generation:** `html-to-image`
-- **State Management:** Zustand with `localStorage` persistence
-- **Serverless / AI API:** Vite dev server middleware & serverless handler calling `@google/genai` with streaming SSE
-- **Testing:** Vitest (31 unit tests covering all financial math, boundary conditions, and edge cases)
+| Technology | Purpose |
+|---|---|
+| React 18 | User interface |
+| Vite | Development server and frontend build |
+| TypeScript | Typed application logic |
+| CSS / Tailwind CSS, where configured | Styling and responsive design |
+| Framer Motion, where configured | Animations and transitions |
+| Recharts | Financial projection charts |
+| Lucide React | Interface icons |
+| html-to-image | Share-card image generation |
+| Zustand, where configured | State management and persistence |
+| Vitest | Automated testing |
+| Google Gemini API | AI-generated financial guidance |
+| Git and GitHub | Version control and collaboration |
+
+---
+
+## 🤖 AI Tools Used
+
+### Antigravity
+Used as the AI-powered development environment to assist with application implementation, component development, debugging, and UI improvements.
+
+### ChatGPT
+Used for project ideation, feature planning, prompt engineering, implementation guidance, documentation, and troubleshooting.
+
+### Google Gemini
+Integrated as the AI provider for purchase verdicts and personalized financial insights.
+
+AI assistance was used throughout development, while financial calculations are handled by application logic rather than relying on the language model to perform arithmetic.
+
+---
+
+## 🧠 Important Prompts Used
+
+### Prompt 1 — Master Project Build
+
+> Build a production-quality, mobile-first financial awareness application called TimeWorth. Convert purchase prices into working hours and visualize the potential future value of money. Include a responsive interface, financial calculations, interactive growth charts, natural-language expense input, an AI verdict, a multi-item cart, shareable cards, and English/Tamil localization. Prioritize a functional, testable implementation and document the architecture, formulas, environment configuration, and limitations.
+
+### Prompt 2 — Gemini Financial Verdict
+
+> Act as a friendly, non-judgmental financial decision coach. Use the financial information and calculated results provided by the application to explain a purchase's impact. Offer a practical alternative and one actionable suggestion. Keep responses concise, empathetic, and realistic. Never invent missing information or guarantee investment returns. Respond in the user's selected language.
+
+### Prompt 3 — Premium UI/UX
+
+> Improve the existing TimeWorth interface using a premium dark fintech aesthetic with a deep navy background, subtle violet accents, modern typography, responsive layouts, interactive financial visualizations, accessible controls, and smooth micro-interactions. Preserve existing functionality and avoid unnecessary dependencies.
+
+### Prompt 4 — Secure Gemini API Integration
+
+> Integrate the Google Gemini API into the existing application using the official SDK and a secure server-side implementation. Store credentials in environment variables, prevent secrets from appearing in client-side code or GitHub, preserve existing response formats and offline fallback behavior, handle API errors gracefully, and verify the integration with tests and a production build.
+
+### Prompt 5 — Debugging and Verification
+
+> Inspect the existing codebase before making changes. Identify the root cause of the issue, implement the smallest appropriate fix, preserve working features, add or update tests where appropriate, and run the test suite and production build. Do not remove tests or replace real functionality with hardcoded mock responses to make verification appear successful.
+
+---
+
+## 💻 AI-Generated Code That Was Modified
+
+AI-assisted development contributed to the implementation and refinement of the existing application.
+
+The following modifications were made during development:
+
+1. **API Integration:** Added Gemini API configuration using environment variables and integrated the credentials with the application's AI implementation.
+2. **Environment Configuration:** Added a local `.env` file for API credentials and maintained an `.env.example` template for documenting required variables.
+3. **Git Security:** Updated `.gitignore` to exclude environment files containing secrets and reduce the risk of accidentally exposing credentials in the public repository.
+4. **UI Refinements:** Modified interface components and styling to improve consistency with TimeWorth's dark fintech design.
+5. **Code Adaptation:** Reviewed and adapted AI-generated suggestions to fit the existing project structure and application behavior.
+
+The team is responsible for reviewing, understanding, and validating the final code.
+
+**Security note:** Never place the actual Gemini API key in this README, source code, screenshots, or public commits.
+
+---
+
+## 🐛 Bug Solved: Price Input UI Improvement
+
+### Problem
+
+The purchase price field displayed the browser's default up/down number-spinner arrows. These controls looked inconsistent with the application's premium dark theme and made the input feel less polished.
+
+### Solution
+
+The price input was identified for UI improvement so it could use a more consistent custom control design aligned with TimeWorth's existing styling.
+
+The intended improvement replaces the default spinner appearance with compact increment and decrement controls, while preserving manual numeric entry and integration with financial calculations.
+
+### Verification Checklist
+
+- [ ] Increment and decrement controls work correctly.
+- [ ] Manual price entry works.
+- [ ] The minimum value is enforced.
+- [ ] Preset chips update the price correctly.
+- [ ] Financial calculations update after changes.
+- [ ] The control works on desktop and mobile.
+
+*Mark these items as completed only after testing the final implementation.*
 
 ---
 
 ## 🧮 Financial Math Specification
 
-$$\text{Hourly Rate } (R) = \frac{\text{Monthly Take-Home}}{\text{Work Days/Month} \times \text{Hours/Day}}$$
+TimeWorth uses deterministic calculations to convert money into working time and estimate hypothetical future value.
 
-$$\text{Life-Hours } (H) = \frac{\text{Price}}{R}$$
+### 1. Hourly Rate
 
-$$\text{Lump-Sum Future Value } (FV) = P \times (1 + r)^t$$
+\[
+R = \frac{M}{D \times H}
+\]
 
-$$\text{Recurring Annuity Future Value } (FV) = C \times \frac{(1 + r/n)^{nt} - 1}{r/n}$$
+Where:
 
-- $P$: Lump-sum price (₹)
-- $C$: Recurring periodic payment (₹)
-- $r$: Annual nominal interest rate (e.g., 0.12 for 12%)
-- $n$: Compounding compounding intervals per year (daily, weekly, monthly, yearly)
-- $t$: Horizon in years
+- \(R\) = hourly earning rate
+- \(M\) = monthly take-home income
+- \(D\) = working days per month
+- \(H\) = working hours per day
+
+### 2. Life-Hours
+
+\[
+T = \frac{P}{R}
+\]
+
+Where:
+
+- \(T\) = estimated working hours
+- \(P\) = purchase price
+- \(R\) = hourly earning rate
+
+### 3. Lump-Sum Future Value
+
+\[
+FV = P(1+r)^t
+\]
+
+Where:
+
+- \(P\) = initial amount
+- \(r\) = assumed annual return as a decimal
+- \(t\) = investment horizon in years
+
+### 4. Recurring Investment Future Value
+
+For regular contributions made at the end of each period:
+
+\[
+FV = C\frac{(1+i)^N-1}{i}
+\]
+
+Where:
+
+- \(C\) = contribution per period
+- \(i\) = assumed return per period
+- \(N\) = total number of contributions
+
+The zero-interest case must be handled separately:
+
+\[
+FV = C \times N
+\]
+
+All displayed results should be calculated by application code. Values should be validated and rounded for presentation rather than prematurely during calculations.
+
+### Financial Disclaimer
+
+TimeWorth is an educational awareness tool, not professional financial advice. Investment returns are uncertain, and hypothetical projections do not guarantee actual outcomes.
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or pnpm
 
-### 1. Clone & Install
+- Node.js 18 or a compatible version required by the installed dependencies
+- npm
+- A Gemini API key for live AI functionality
+
+### 1. Clone the Repository
+
 ```bash
-git clone <repo-url>
-cd timeworth
+git clone https://github.com/akhilcodes007/VMAX-.git
+cd "VMAX-"
 npm install
 ```
 
-### 2. Configure Environment (Optional for AI)
-Copy `.env.example` to `.env`:
+### 2. Configure Environment Variables
+
+Copy the example environment file if it exists:
+
 ```bash
 cp .env.example .env
 ```
-Add your Gemini API key from [Google AI Studio](https://aistudio.google.com/):
+
+Configure the variables supported by the application's backend:
+
 ```env
 GEMINI_API_KEY=your_gemini_api_key_here
 GEMINI_MODEL=gemini-2.5-flash
 ```
-*(Note: If no API key is provided, TimeWorth operates in offline heuristic mode so you can test all features immediately.)*
 
-### 3. Run Development Server
+Replace the placeholder with your own key in the local `.env` file.
+
+Obtain an API key from [Google AI Studio](https://aistudio.google.com/apikey).
+
+**Never commit `.env` to GitHub.** Only commit `.env.example` with placeholder values.
+
+If the AI service is unavailable, manual entry and local financial calculations should remain usable.
+
+### 3. Start the Development Server
+
 ```bash
 npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### 4. Run Test Suite
+Open [http://localhost:5173](http://localhost:5173).
+
+If the backend requires a separate development process, start it using the appropriate script configured in `package.json`.
+
+### 4. Run Tests
+
 ```bash
 npm test
 ```
-All 61 unit tests will run and validate hourly rate, lump-sum compound interest, recurring annuities, year-by-year chart series, custom price stepper controls, boundary cases, and the Gemini AI / offline heuristic endpoint contracts.
 
 ### 5. Build for Production
+
 ```bash
 npm run build
 ```
-Creates an optimized, production bundle in `/dist`.
+
+The production build is normally generated in the `dist` directory.
 
 ---
 
 ## 📁 Project Structure
 
-```
+The following is a representative structure of the TimeWorth project. Individual files may differ depending on the final implementation.
+
+```text
+VMAX-/
 ├── api/
-│   └── ai.ts               # Gemini AI streaming endpoint & Vite server middleware
+│   └── ai.ts
 ├── public/
-│   └── favicon.svg         # App favicon
+│   └── favicon.svg
 ├── src/
 │   ├── components/
-│   │   ├── CartDrawer.tsx   # Multi-item cart drawer with undo & totals
-│   │   ├── FreedomSlider.tsx# Year/rate sliders & Recharts compounding chart
-│   │   ├── Hero.tsx         # Main price input, life-hours display & presets
-│   │   ├── IncomeSetup.tsx  # Income profile modal & take-home calculations
-│   │   ├── LangToggle.tsx   # English / Tamil language toggle switch
-│   │   ├── ShareCard.tsx    # 1:1 image generator with Web Share API
-│   │   ├── SmartInput.tsx   # Natural language recurring expense parser
-│   │   └── VerdictCard.tsx  # Gemini AI verdict, alternatives & chat
+│   │   ├── CartDrawer.tsx
+│   │   ├── FreedomSlider.tsx
+│   │   ├── Hero.tsx
+│   │   ├── IncomeSetup.tsx
+│   │   ├── LangToggle.tsx
+│   │   ├── ShareCard.tsx
+│   │   ├── SmartInput.tsx
+│   │   └── VerdictCard.tsx
 │   ├── lib/
-│   │   ├── format.ts        # Currency (₹ Lakhs/Crores), time, and human-scale formatters
-│   │   ├── i18n.ts          # English & Tamil translations dictionary
-│   │   ├── math.ts          # Pure financial formulas & breakdown helpers
-│   │   └── parse-schema.ts  # Zod schema for structured AI parsing
+│   │   ├── format.ts
+│   │   ├── i18n.ts
+│   │   └── math.ts
 │   ├── prompts/
-│   │   └── prompts.ts       # Structured system prompts for Gemini
 │   ├── store/
-│   │   └── useStore.ts      # Zustand persistent state (income, cart, theme, language)
-│   ├── App.tsx              # Root application layout & orchestration
-│   ├── index.css            # Tailwind v4 theme & modern typography
-│   └── main.tsx             # React DOM entry point
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
 ├── tests/
-│   └── math.test.ts         # Vitest test suite (31 tests)
 ├── .env.example
+├── .gitignore
 ├── index.html
 ├── package.json
 ├── tsconfig.json
-└── vite.config.ts
+├── vite.config.ts
+└── README.md
 ```
 
 ---
 
 ## 🔒 Privacy & Security
 
-- **Client-Side Profile Storage:** All income numbers, hourly rates, and cart contents remain strictly in your browser's `localStorage`.
-- **Zero Salary Leakage in Shares:** Shareable PNG cards only state the item name and life-hours required; your monthly salary or hourly wage is never embedded.
-- **Secure Serverless AI Proxy:** Gemini API keys are only evaluated server-side and never exposed to the client bundle.
+- **API Key Protection:** Gemini credentials must remain server-side and must never be embedded in frontend bundles.
+- **Environment File Exclusion:** `.gitignore` should exclude `.env` and other files containing secrets.
+- **Private Financial Inputs:** Avoid sending unnecessary personal financial information to external AI services.
+- **Share Card Privacy:** Do not include salary or hourly earning rate in generated share cards.
+- **Graceful Degradation:** The core calculator should remain useful if the AI service is unavailable.
 
 ---
 
 ## 📜 License
-MIT License. Built for life-first financial awareness.
+
+MIT License, if the project is released under the MIT license. Add a corresponding `LICENSE` file before claiming the repository is officially licensed under MIT.
+
+---
+
+## 🌟 Our Vision
+
+We believe financial awareness begins when people understand not only how much something costs, but also what that money represents in their lives.
+
+**TimeWorth — Your Money. Your Time. Your Future.**
